@@ -1,18 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_keyboard_arrow_left_black_24dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOMPDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/backButton"
+        android:layout_alignBottom="@id/backButton"
+        android:layout_toEndOf="@id/backButton"
+        android:gravity="center"
+        android:text="@string/lbl_omp_dashboard"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_regular_2x" />
+
+    <com.padc.ponnya.customviewassignmentprj.views.components.RoundedCornerTextView
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:gravity="center"
+        android:text="In Progress"
+        android:textColor="@color/white"
+        app:backgroundColor="@color/colorAccent"
+        app:cornerRadius="8dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCreateAdditionalPagesLbl"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backButton"
+        android:layout_alignStart="@id/backButton"
+        android:text="@string/lbl_create_additional_pages"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/text_heading_2x"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="03 days | Dec 18, 2019"
+        android:textColor="@color/colorTextSecondary"
+        android:layout_below="@id/tvCreateAdditionalPagesLbl"
+        android:id="@+id/tvDate"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_alignStart="@id/backButton"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_left_rounded_corner"
+        android:layout_below="@id/tvDate"/>
+
+
+</RelativeLayout>
