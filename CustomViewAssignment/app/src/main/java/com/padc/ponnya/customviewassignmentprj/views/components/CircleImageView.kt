@@ -18,12 +18,7 @@ class CircleImageView @JvmOverloads constructor(
 
     private var strokeColor = Color.BLACK
 
-    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        // Paint styles used for rendering are initialized here. This
-        // is a performance optimization, since onDraw() is called
-        // for every screen refresh.
-        color = strokeColor
-    }
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     init {
         context.withStyledAttributes(attrs, R.styleable.CircleImageView) {
@@ -36,6 +31,7 @@ class CircleImageView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
         val radius = size / 2f
         paint.isAntiAlias = true
+        paint.color = strokeColor
         path.addCircle(size / 2f, size / 2f, radius - (radius * 0.1f), Path.Direction.CCW)
         canvas?.drawCircle(size / 2f, size / 2f, radius, paint)
         canvas?.clipPath(path)
