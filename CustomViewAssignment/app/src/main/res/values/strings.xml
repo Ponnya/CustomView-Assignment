@@ -3,4 +3,7 @@
     <string name="lbl_omp_dashboard">OMP Dashboard</string>
     <string name="lbl_in_progress">In Progress</string>
     <string name="lbl_create_additional_pages">Create additional pages</string>
+    <string name="lbl_data">Data</string>
+    <string name="lbl_tasks">Tasks</string>
+    <string name="lbl_design">#Design</string>
 </resources>

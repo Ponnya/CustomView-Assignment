@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.padc.ponnya.customviewassignmentprj.views.components.CircleImageView
         android:id="@+id/ivProfile"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/profile"
        app:strokeColor="@color/white"/>
 </RelativeLayout>

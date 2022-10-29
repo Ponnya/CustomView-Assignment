@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorSecondaryLight">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDataLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/viewTask"
+        android:layout_alignBottom="@id/viewTask"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:gravity="center"
+        android:text="24.19"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/viewTask"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_toEndOf="@id/tvDataLbl"
+        android:background="@color/white" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="@dimen/margin_card_medium_2"
+        android:layout_marginTop="83dp"
+        android:layout_toEndOf="@id/tvDataLbl"
+        android:background="@color/black"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+
+        />
+
+
+    <include
+        android:id="@+id/viewTask"
+        layout="@layout/view_item_task"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_toEndOf="@id/viewLine" />
+
+</RelativeLayout>

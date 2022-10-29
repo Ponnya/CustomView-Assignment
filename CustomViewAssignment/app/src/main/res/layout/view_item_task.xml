@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_rounded_corner">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvProgressStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/lbl_in_progress"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lblPageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvProgressStatus"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="Contact Page"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:text="@string/lbl_design"
+        android:textColor="@color/colorTextSecondary"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:background="@drawable/ic_baseline_sms_black_24dp"
+        android:backgroundTint="@color/colorTextSecondary" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSMSCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivSMS"
+        android:layout_alignBottom="@id/ivSMS"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_toEndOf="@id/ivSMS"
+        android:text="3"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAttach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_toEndOf="@id/tvSMSCount"
+        android:background="@drawable/ic_baseline_attach_file_black_24dp"
+        android:backgroundTint="@color/colorTextSecondary" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttachCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivAttach"
+        android:layout_alignBottom="@id/ivAttach"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@id/ivAttach"
+        android:text="5"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <com.padc.ponnya.customviewassignmentprj.views.components.CircleImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:src="@drawable/profile"
+        app:strokeColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivProfile"
+        android:layout_alignBottom="@id/ivProfile"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_toStartOf="@id/ivProfile"
+        android:gravity="center"
+        android:text="N 163"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+</RelativeLayout>

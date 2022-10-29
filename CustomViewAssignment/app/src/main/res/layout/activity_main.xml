@@ -51,36 +51,92 @@
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="03 days | Dec 18, 2019"
-        android:textColor="@color/colorTextSecondary"
         android:layout_below="@id/tvCreateAdditionalPagesLbl"
-        android:id="@+id/tvDate"
+        android:layout_alignStart="@id/backButton"
         android:layout_marginTop="@dimen/margin_medium"
-        android:layout_alignStart="@id/backButton"/>
+        android:text="03 days | Dec 18, 2019"
+        android:textColor="@color/colorTextSecondary" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProfileImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvDate"
+        android:layout_alignStart="@id/tvDate"
         android:layout_marginTop="@dimen/margin_medium"
-        android:layout_alignStart="@id/tvDate"/>
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <com.padc.ponnya.customviewassignmentprj.views.components.CircularProgressBar
-        android:id="@+id/gg"
+        android:id="@+id/progressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_below="@id/tvDate"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/margin_medium_2"
-/>
+        app:backColor="@color/colorAccentLight"
+        app:frontColor="@color/colorAccent"
+        app:progress="85" />
 
-<!--    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_left_rounded_corner"
-        android:layout_below="@id/tvDate"/>-->
+        android:layout_below="@id/progressBar"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:background="@drawable/background_left_rounded_corner">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDataLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/lbl_data"
+            android:textColor="@color/colorTextSecondary"
+            android:textStyle="bold" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxlarge"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_toEndOf="@id/tvDataLbl"
+            android:text="@string/lbl_tasks"
+            android:textColor="@color/colorTextSecondary"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_toStartOf="@id/ivDownArrow"
+            android:text="Show in days"
+            android:textColor="@color/colorTextSecondary"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivDownArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:background="@drawable/ic_baseline_arrow_drop_down_black_24dp"
+            android:backgroundTint="@color/colorTextSecondary" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTaskList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDataLbl" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
