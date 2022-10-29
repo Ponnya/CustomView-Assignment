@@ -3,27 +3,38 @@ package com.padc.ponnya.customviewassignmentprj.activities
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.padc.ponnya.customviewassignmentprj.R
 import com.padc.ponnya.customviewassignmentprj.adapters.ProfileImageAdapter
 import com.padc.ponnya.customviewassignmentprj.adapters.TaskAdapter
+import com.padc.ponnya.customviewassignmentprj.mvp.presenters.MainPresenter
+import com.padc.ponnya.customviewassignmentprj.mvp.presenters.impl.MainPresenterImpl
+import com.padc.ponnya.customviewassignmentprj.mvp.views.MainView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(),MainView {
     private lateinit var mProfileImageAdapter: ProfileImageAdapter
     private lateinit var mTaskAdapter: TaskAdapter
+
+    private lateinit var mMainPresenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        setUpPresenter()
         setUpProfileRecyclerView()
         setUpTasksListRecyclerView()
     }
 
+    private fun setUpPresenter() {
+        mMainPresenter = ViewModelProvider(this)[MainPresenterImpl::class.java]
+        mMainPresenter.initView(this)
+    }
+
     private fun setUpProfileRecyclerView() {
-        mProfileImageAdapter = ProfileImageAdapter()
+        mProfileImageAdapter = ProfileImageAdapter(mMainPresenter)
         rvProfileImage.adapter = mProfileImageAdapter
         // Overlap Items Right to left
         rvProfileImage.addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -50,5 +61,9 @@ class MainActivity : BaseActivity() {
         mTaskAdapter = TaskAdapter()
         rvTaskList.adapter = mTaskAdapter
         rvTaskList.layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
+    }
+
+    override fun navigateToProfileScreen() {
+        startActivity(ProfileActivity.newIntent(this))
     }
 }
