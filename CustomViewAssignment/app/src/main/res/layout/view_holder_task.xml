@@ -41,7 +41,7 @@
 
     <include
         android:id="@+id/viewTask"
-        layout="@layout/view_item_task"
+        layout="@layout/view_holder_task_list"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_marginStart="@dimen/margin_medium_2"

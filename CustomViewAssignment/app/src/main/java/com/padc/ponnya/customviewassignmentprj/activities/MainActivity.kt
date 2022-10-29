@@ -9,10 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.padc.ponnya.customviewassignmentprj.R
 import com.padc.ponnya.customviewassignmentprj.adapters.ProfileImageAdapter
 import com.padc.ponnya.customviewassignmentprj.adapters.TaskAdapter
+import com.padc.ponnya.customviewassignmentprj.adapters.TaskListAdapter
 import com.padc.ponnya.customviewassignmentprj.mvp.presenters.MainPresenter
 import com.padc.ponnya.customviewassignmentprj.mvp.presenters.impl.MainPresenterImpl
 import com.padc.ponnya.customviewassignmentprj.mvp.views.MainView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.view_item_profile.*
 
 class MainActivity : BaseActivity(),MainView {
     private lateinit var mProfileImageAdapter: ProfileImageAdapter
@@ -20,12 +22,16 @@ class MainActivity : BaseActivity(),MainView {
 
     private lateinit var mMainPresenter: MainPresenter
 
+    private lateinit var mTaskListAdapter: TaskListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setUpPresenter()
         setUpProfileRecyclerView()
         setUpTasksListRecyclerView()
+        setUpListener()
+
     }
 
     private fun setUpPresenter() {
@@ -58,12 +64,26 @@ class MainActivity : BaseActivity(),MainView {
     }
 
     private fun setUpTasksListRecyclerView(){
-        mTaskAdapter = TaskAdapter()
+        mTaskAdapter = TaskAdapter(mMainPresenter)
         rvTaskList.adapter = mTaskAdapter
         rvTaskList.layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
+
+        mTaskListAdapter = TaskListAdapter()
+        rvTasks.adapter = mTaskListAdapter
+        rvTasks.layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
     }
 
-    override fun navigateToProfileScreen() {
-        startActivity(ProfileActivity.newIntent(this))
+    private fun setUpListener(){
+        ivCloseBtn.setOnClickListener {
+            mMainPresenter.onTapClose()
+        }
+    }
+
+    override fun openProfileScreen() {
+   profileView.visibility = View.VISIBLE
+    }
+
+    override fun closeProfileScreen() {
+        profileView.visibility = View.GONE
     }
 }

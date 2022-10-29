@@ -16,4 +16,6 @@
     <color name="colorTextPrimary">#0A1E4B</color>
     <color name="colorTextSecondary">#B7C0CC</color>
     <color name="colorSecondaryLight">#F0F4FD</color>
+    <color name="colorTransparentOverlay">#4D000000</color>
+    <color name="colorLightGreen">#2CC09C</color>
 </resources>

@@ -137,6 +137,14 @@
             android:layout_below="@id/tvDataLbl" />
 
     </RelativeLayout>
+    <include
+        layout="@layout/view_item_profile"
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:id="@+id/profileView"/>
+
 
 
 </RelativeLayout>

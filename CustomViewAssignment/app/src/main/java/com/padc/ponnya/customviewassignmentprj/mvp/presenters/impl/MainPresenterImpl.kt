@@ -12,11 +12,19 @@ class MainPresenterImpl : ViewModel(), MainPresenter {
         mMainView = view
     }
 
+    override fun onTapClose() {
+        mMainView.closeProfileScreen()
+    }
+
     override fun onUiReady() {
 
     }
 
     override fun onTapAddButton() {
-        mMainView.navigateToProfileScreen()
+
+    }
+
+    override fun onTapProfile() {
+        mMainView.openProfileScreen()
     }
 }

@@ -6,4 +6,8 @@
     <string name="lbl_data">Data</string>
     <string name="lbl_tasks">Tasks</string>
     <string name="lbl_design">#Design</string>
+    <string name="lbl_closed_tasks">Closed tasks</string>
+    <string name="lbl_open_tasks">Open Tasks</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
