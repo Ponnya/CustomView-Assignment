@@ -18,4 +18,5 @@
     <color name="colorSecondaryLight">#F0F4FD</color>
     <color name="colorTransparentOverlay">#4D000000</color>
     <color name="colorLightGreen">#2CC09C</color>
+    <color name="colorLighterGreen">#D4F2EB</color>
 </resources>

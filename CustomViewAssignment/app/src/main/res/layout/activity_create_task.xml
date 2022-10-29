@@ -301,12 +301,24 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvAttachments"
+                    android:layout_above="@id/straightProgressBar"
+                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginStart="@dimen/margin_medium"
                     android:layout_toEndOf="@id/ivImage"
                     android:text="Reference_1"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
+                <com.padc.ponnya.customviewassignmentprj.views.components.StraightProgressBar
+                    android:id="@+id/straightProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:layout_toEndOf="@id/ivImage"
+                    android:layout_alignBottom="@id/ivImage"
+                    app:progressNumber="57"
+                    app:backgroundLineColor="@color/colorLighterGreen"
+                    app:progressBarColor="@color/colorLightGreen"
+                    android:layout_toStartOf="@id/ivClose"/>
+
 
                 <ImageButton
                     android:id="@+id/ivClose"
@@ -323,7 +335,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvAttachments"
+                    android:layout_above="@id/straightProgressBar"
+                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginEnd="@dimen/margin_medium"
                     android:layout_toStartOf="@id/ivClose"
                     android:text="168 KB"
