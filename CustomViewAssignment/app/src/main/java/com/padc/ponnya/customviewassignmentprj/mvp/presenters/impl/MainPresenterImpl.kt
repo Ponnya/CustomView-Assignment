@@ -21,7 +21,7 @@ class MainPresenterImpl : ViewModel(), MainPresenter {
     }
 
     override fun onTapAddButton() {
-
+        mMainView.navigateToTaskCreateScreen()
     }
 
     override fun onTapProfile() {

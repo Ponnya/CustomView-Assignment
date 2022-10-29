@@ -16,7 +16,7 @@ import com.padc.ponnya.customviewassignmentprj.mvp.views.MainView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_item_profile.*
 
-class MainActivity : BaseActivity(),MainView {
+class MainActivity : BaseActivity(), MainView {
     private lateinit var mProfileImageAdapter: ProfileImageAdapter
     private lateinit var mTaskAdapter: TaskAdapter
 
@@ -63,27 +63,33 @@ class MainActivity : BaseActivity(),MainView {
             LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
     }
 
-    private fun setUpTasksListRecyclerView(){
+    private fun setUpTasksListRecyclerView() {
         mTaskAdapter = TaskAdapter(mMainPresenter)
         rvTaskList.adapter = mTaskAdapter
-        rvTaskList.layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
+        rvTaskList.layoutManager =
+            LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
 
         mTaskListAdapter = TaskListAdapter()
         rvTasks.adapter = mTaskListAdapter
-        rvTasks.layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
+        rvTasks.layoutManager =
+            LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
     }
 
-    private fun setUpListener(){
+    private fun setUpListener() {
         ivCloseBtn.setOnClickListener {
             mMainPresenter.onTapClose()
         }
     }
 
     override fun openProfileScreen() {
-   profileView.visibility = View.VISIBLE
+        profileView.visibility = View.VISIBLE
     }
 
     override fun closeProfileScreen() {
         profileView.visibility = View.GONE
+    }
+
+    override fun navigateToTaskCreateScreen() {
+        startActivity(CreateTaskActivity.newIntent(this))
     }
 }

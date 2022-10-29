@@ -10,4 +10,6 @@
     <string name="lbl_open_tasks">Open Tasks</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lbl_save">Save</string>
+    <string name="lbl_client">CLIENT</string>
 </resources>
