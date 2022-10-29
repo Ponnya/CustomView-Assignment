@@ -6,6 +6,13 @@
     </declare-styleable>
 
     <declare-styleable name="CircleImageView">
-        <attr name="strokeColor" format="color"/>
+        <attr name="strokeColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="CircularProgressBar">
+        <attr name="backColor" format="color" />
+        <attr name="frontColor" format="color" />
+        <attr name="progress" format="integer" />
+    </declare-styleable>
+
 </resources>

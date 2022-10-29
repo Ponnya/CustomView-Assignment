@@ -8,6 +8,8 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
+import androidx.core.content.withStyledAttributes
+import com.padc.ponnya.customviewassignmentprj.R
 
 class CircularProgressBar @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
@@ -15,11 +17,21 @@ class CircularProgressBar @JvmOverloads constructor(
 
     private var size = 0
 
-    private var progress = 85
+    private var progress = 0
 
-    private var strokeColor = Color.GRAY
+    private var backColor = Color.GRAY
+
+    private var frontColor = Color.BLACK
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+    init {
+        context.withStyledAttributes(attrs, R.styleable.CircularProgressBar) {
+            progress = getInt(R.styleable.CircularProgressBar_progress, progress)
+            backColor = getColor(R.styleable.CircularProgressBar_backColor, backColor)
+            frontColor = getColor(R.styleable.CircularProgressBar_frontColor, frontColor)
+        }
+    }
 
 
     override fun onDraw(canvas: Canvas?) {
@@ -39,7 +51,7 @@ class CircularProgressBar @JvmOverloads constructor(
 
     private fun createOuterCircle(canvas: Canvas?) {
         val outerCircleRadius = size / 2f
-        paint.color = strokeColor
+        paint.color = backColor
         canvas?.drawCircle(size / 2f, size / 2f, outerCircleRadius, paint)
     }
 
@@ -50,7 +62,7 @@ class CircularProgressBar @JvmOverloads constructor(
     }
 
     private fun drawProgress(canvas: Canvas?) {
-        paint.color = Color.BLACK
+        paint.color = frontColor
         val outerCircleRadius = size / 2f
         val rectangle = RectF(
             size / 2f - outerCircleRadius,
