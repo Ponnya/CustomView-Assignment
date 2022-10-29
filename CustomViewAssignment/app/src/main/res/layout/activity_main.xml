@@ -66,6 +66,16 @@
         android:layout_below="@id/tvDate"
         android:layout_marginTop="@dimen/margin_medium"
         android:layout_alignStart="@id/tvDate"/>
+
+    <com.padc.ponnya.customviewassignmentprj.views.components.CircularProgressBar
+        android:id="@+id/gg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tvDate"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+/>
+
 <!--    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
