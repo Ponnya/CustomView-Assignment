@@ -17,7 +17,8 @@ class ProfileImageAdapter : RecyclerView.Adapter<ProfileImageViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ProfileImageViewHolder, position: Int) {
-
+        if (position == itemCount - 1)
+            holder.bindData()
     }
 
     override fun getItemCount(): Int = 4
